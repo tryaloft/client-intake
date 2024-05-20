@@ -1,0 +1,128 @@
+{
+  "case_name": "Graciela Pendretti",
+  "case_id": "1",
+  "case_type": "Personal Injury, Vehicular Negligence",
+  "engagement_status": "New Client",
+  "intake_call": {
+    "transcript_link": "<transcript_link>",
+    "audio_file": "<audio_file>",
+    "intaker": "Joanie Hollberg",
+    "start_timestamp": "2024-05-19 21:31:05.259201",
+    "end_timestamp": "2024-05-19 22:16:17.259201"
+  },
+  "key_considerations": {
+    "liability": {
+      "Status": "Unclear",
+      "Details": "The footage shows the employee, Mark Lee, ran a red light, but partial responsibility is possible on Ms. Pendretti’s part since she was on her cell phone during the accident could also alter the assessment."
+    },
+    "damages": {
+      "Status": "Present",
+      "Details": "Ms. Pendretti suffered a fractured wrist and concussion, necessitating substantial medical treatment. Ongoing care, long-term impacts, personal suffering, & lost earnings may yield estimated damages around $100,000."
+    },
+    "assets": {
+      "Status": "Present",
+      "Details": "Smith Auto Inc., employing Mark Lee and owning the involved vehicle, likely has extensive insurance coverage, making them a viable target for substantial claims, enhancing the financial viability of pursuing this case."
+    }
+  },
+  "intake_form": {
+    "Type": "Personal injury",
+    "Pages": [
+      {
+        "title": "Existing Attorney Relationships",
+
+        "Attorney Name": "John Doe",
+        "Firm Name": "Doe & Associates",
+        "Attorney Phone": "555-123-4567",
+        "Attorney Email": "john.doe@example.com",
+        "Case Type": "Personal Injury",
+        "Case Outcome": "Settlement of $50,000",
+        "Start Date": "2020-01-15",
+        "End Date": "2021-06-30",
+        "Reason for Leaving": "Client moved away",
+        "Additional Notes": "The attorney was professional and communicative."
+      },
+      {
+        "title": "Client Information",
+        "Name": "Graciela Pendretti",
+        "Home Phone": "650-804-6164",
+        "Employer": "DoorDash Inc.",
+        "Address": "130 Barrow St. #312",
+        "Cell Phone": "650-804-6164",
+        "Employer Addrss": "531 Lasuen Mall, San Francisco",
+        "City & State": "New York, NY",
+        "Email Address": "graciela.[endretti@gmail.com",
+        "Work Phone": "650-804-6164"
+      },
+      {
+        "title": "Accident Details",
+
+        "Accident Date": "2023-05-01",
+        "Accident Time": "14:30",
+        "Accident Location": "Main Street and 5th Avenue",
+        "Weather Conditions": "Clear",
+        "Road Conditions": "Dry",
+        "Traffic Conditions": "Moderate",
+        "Involved Vehicles": "2",
+        "Vehicle 1 Make and Model": "Toyota Camry",
+        "Vehicle 2 Make and Model": "Ford F-150",
+        "Driver 1 Name": "Mark Lee",
+        "Driver 2 Name": "Maria Pendretti",
+        "Witnesses": "John Smith, Jane Doe",
+        "Police Report Filed": "Yes",
+        "Police Report Number": "123456",
+        "Injuries Reported": "Yes",
+        "Injury Details": "Fractured wrist and concussion",
+        "Medical Treatment Required": "Yes",
+        "Estimated Medical Costs": "$100,000",
+        "Liability Status": "Unclear",
+        "Liability Details": "The footage shows the employee, Mark Lee, ran a red light, but partial responsibility is possible on Ms. Pendretti’s part since she was on her cell phone during the accident could also alter the assessment.",
+        "Damages Status": "Present",
+        "Damages Details": "Ms. Pendretti suffered a fractured wrist and concussion, necessitating substantial medical treatment. Ongoing care, long-term impacts, personal suffering, & lost earnings may yield estimated damages around $100,000.",
+        "Assets Status": "Present",
+        "Assets Details": "Smith Auto Inc., employing Mark Lee and owning the involved vehicle, likely has extensive insurance coverage, making them a viable target for substantial claims, enhancing the financial viability of pursuing this case."
+      },
+      {
+        "title": "Plaintiff Insurance",
+        "Insurance Company Name": "ABC Insurance Co.",
+        "Policy Number": "POL123456789",
+        "Policy Start Date": "2022-01-01",
+        "Policy End Date": "2023-12-31",
+        "Coverage Type": "Full Coverage",
+        "Bodily Injury Liability Limit": "$100,000 per person",
+        "Property Damage Liability Limit": "$50,000 per accident",
+        "Uninsured Motorist Coverage": "Yes",
+        "Underinsured Motorist Coverage": "Yes",
+        "Medical Payments Coverage": "$5,000",
+        "Rental Reimbursement Coverage": "Yes",
+        "Roadside Assistance Coverage": "Yes",
+        "Premium Amount": "$1,200 per year",
+        "Deductible Amount": "$500",
+        "Claim History": "No previous claims",
+        "Agent Name": "John Doe",
+        "Agent Phone Number": "555-123-4567",
+        "Agent Email": "john.doe@abcinsurance.com",
+        "Customer Service Phone Number": "800-555-1234",
+        "Claims Department Phone Number": "800-555-5678",
+        "Policy Holder Name": "Maria Pendretti",
+        "Policy Holder Address": "123 Main Street, Anytown, USA",
+        "Policy Holder Phone Number": "555-987-6543",
+        "Policy Holder Email": "maria.pendretti@example.com",
+        "Accident Coverage": "Yes",
+        "Personal Injury Protection": "Yes"
+      },
+      {
+        "title": "Defendent Insurance",
+
+        "Defendant Insurance Company Name": "XYZ Insurance Co.",
+        "Defendant Policy Number": "DEF987654321",
+        "Coverage Type": "Liability Coverage",
+        "Bodily Injury Liability Limit": "$50,000 per person",
+        "Property Damage Liability Limit": "$25,000 per accident",
+        "Agent Name": "Jane Smith",
+        "Agent Phone Number": "555-987-1234"
+      }
+    ],
+    "download_link": "<download_link>"
+  },
+  "engagement_letter_link": "<engagement_letter_link>"
+}
