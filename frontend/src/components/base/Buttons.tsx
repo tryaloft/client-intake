@@ -5,6 +5,7 @@ const SecondaryButton = styled(Button)({
   lineHeight: "24px",
   textDecoration: "none",
   textTransform: "none",
+  borderRadius: "4px",
 });
 
 const PurpleIconButton = styled(Button)({

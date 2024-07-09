@@ -87,7 +87,7 @@ const IntakeCallSection: React.FC = () => {
           >
             View Transcript
           </Link>
-
+{/* 
           <Link
             component="button"
             variant="body1"
@@ -96,7 +96,7 @@ const IntakeCallSection: React.FC = () => {
             }}
           >
             Download MP3
-          </Link>
+          </Link> */}
         </Stack>
       </Stack>
       <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: "24px" }}>
