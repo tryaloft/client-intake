@@ -22,8 +22,8 @@ const Layout: React.FC<Props> = () => {
       <Stack direction={"column"} gap={"24px"} sx={{ m: "48px", width: "100%" }}>
         <ClientTitle />
         <IntakeCallSection />
-        <KeyConsiderations />
-        {caseData?.intake_form.Pages && <IntakeForm intakeForm={{Type: caseData.intake_form.Type, Pages: caseData.intake_form.Pages as IntakeFormPage[]}} />}
+        {/* <KeyConsiderations /> */}
+        {caseData?.intake_form.Pages && <IntakeForm intakeForm={{type: caseData.intake_form.Type, pages: caseData.intake_form.Pages as IntakeFormPage[]}} />}
       </Stack>
     </Stack>
   );

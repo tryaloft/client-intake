@@ -3,7 +3,6 @@ import React from "react";
 import ClientScreenTile from "./base/ClientScreenTile";
 import { useSelector } from "react-redux";
 import { selectCaseData } from "../state/selectors/client-selectors";
-import { Details } from "@mui/icons-material";
 import { getConsiderationStatusColor } from "../utils/color";
 
 interface Props {

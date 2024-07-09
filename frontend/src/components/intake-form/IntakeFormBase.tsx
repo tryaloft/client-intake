@@ -1,13 +1,11 @@
 import React from "react";
 import {
-  AppBar,
   Box,
   Tab,
   Tabs,
   Typography,
   Paper,
   Grid,
-  Button,
   Stack,
   Link,
   Input,
@@ -20,8 +18,8 @@ interface IntakeFormPage {
 
 interface IntakeFormProps {
   intakeForm: {
-    Type: string;
-    Pages: IntakeFormPage[];
+    type: string;
+    pages: IntakeFormPage[];
   };
 }
 
@@ -64,7 +62,7 @@ const IntakeForm: React.FC<IntakeFormProps> = ({ intakeForm }) => {
         <Typography variant="h1" gutterBottom>
           Intake Form
         </Typography>
-        <Link
+        {/* <Link
           component="button"
           variant="body1"
           onClick={() => {
@@ -72,7 +70,7 @@ const IntakeForm: React.FC<IntakeFormProps> = ({ intakeForm }) => {
           }}
         >
           Download PDF
-        </Link>
+        </Link> */}
       </Stack>
 
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -83,7 +81,7 @@ const IntakeForm: React.FC<IntakeFormProps> = ({ intakeForm }) => {
           textColor="secondary"
           indicatorColor="secondary"
         >
-          {intakeForm.Pages.map((page, index) => (
+          {intakeForm.pages.map((page, index) => (
             <Tab
               disableRipple
               key={index}
@@ -101,7 +99,7 @@ const IntakeForm: React.FC<IntakeFormProps> = ({ intakeForm }) => {
           ))}
         </Tabs>
       </Box>
-      {intakeForm.Pages.map((page, index) => (
+      {intakeForm.pages.map((page, index) => (
         <TabPanel value={value} index={index} key={index}>
           <Grid container spacing={2} columns={{ xs: 3, sm: 8, md: 12 }}>
             {Object.entries(page).map(
