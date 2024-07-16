@@ -57,7 +57,7 @@ const IntakeForm: React.FC<IntakeFormProps> = ({ intakeForm }) => {
   };
 
   return (
-    <Paper sx={{ width: "100%", padding: "24px" }}>
+    <Paper sx={{ padding: "24px" }}>
       <Stack direction="row" justifyContent={"space-between"}>
         <Typography variant="h1" gutterBottom>
           Intake Form
@@ -111,12 +111,13 @@ const IntakeForm: React.FC<IntakeFormProps> = ({ intakeForm }) => {
                         {key.replace(/_/g, " ")}
                       </Typography>
                       <Input
-                      multiline
+                        multiline
                         defaultValue={value}
                         sx={{
                           ...theme.typography.body1,
+                          ml: "16px",
                           fontWeight: "500",
-                          '&.MuiInput-root::before': {
+                          "&.MuiInput-root::before": {
                             border: "none",
                           },
                         }}

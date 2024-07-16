@@ -21,7 +21,6 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("formState", formState)
     if (getPasswordBasedOnUser(formState.username, formState.password)) {
       dispatch(setUsername(formState.username));
       dispatch(setLoggedIn(true));
@@ -29,13 +28,6 @@ const LoginForm: React.FC = () => {
       setError("Invalid username or password");
       return;
     }
-    console.log(
-      "Username:",
-      formState.username,
-      "Password:",
-      formState.password
-    );
-    // Add your login logic here
   };
 
   const handleChange =
@@ -61,7 +53,7 @@ const LoginForm: React.FC = () => {
             {error}
           </Typography>
         )}
-        <Box component="form" onSubmit={handleSubmit} sx={{ mt: error ? "0px" : "36x" }}>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: error ? "0px" : "48px" }}>
           <TextField
             margin="normal"
             required

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Button,
@@ -124,6 +124,12 @@ const Sidebar: React.FC = () => {
   const selectedClient = useSelector(selectSelectedClient);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(setSelectedClient(clients[0].id));
+    // TODO get client data from API
+    dispatch(setCaseData(currCaseData));
+  },[dispatch]);
+
   const handleListItemClick = (event: any, index: number) => {
     dispatch(setSelectedClient(clients[index].id));
     // TODO get case data from API
@@ -178,12 +184,7 @@ const Sidebar: React.FC = () => {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "#7a7a7a",
-                        // client.status === "New Client"
-                        //   ? "#9c27b0"
-                        //   : client.status === "Pending Engagement"
-                        //   ? "#ff9800"
-                        //   : "#4caf50",
+                      color: "#7a7a7a"
                     }}
                   >
                     {client.status}

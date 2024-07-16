@@ -17,9 +17,9 @@ const Layout: React.FC<Props> = () => {
   const caseData = useSelector(selectCaseData);
   
   return (
-    <Stack direction="row" sx={{ width: "100%" }}>
+    <Stack direction="row" >
       <Sidebar />
-      <Stack direction={"column"} gap={"24px"} sx={{ m: "48px", width: "100%" }}>
+      <Stack direction={"column"} gap={"24px"} sx={{ m: "48px" }}>
         <ClientTitle />
         <IntakeCallSection />
         {/* <KeyConsiderations /> */}

@@ -58,7 +58,7 @@ const KeyConsiderations: React.FC<Props> = (props) => {
               Assets:{" "}
               <Box
                 component="span"
-                sx={{ color: getConsiderationStatusColor(assets.Status) }}
+                sx={{ color: "#7a7a7a"}}
               >
                 {assets.Status}
               </Box>
