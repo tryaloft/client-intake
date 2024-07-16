@@ -9,10 +9,10 @@ const ClientTitle: React.FC = () => {
   return (
     <div>
       <Typography variant="h1">{caseData?.case_name}</Typography>
-      <Stack direction="row" gap="20px">
+      <Stack direction="row" gap="20px" alignItems={"center"}>
         <Typography sx={{fontWeight: 500, fontSize: "1rem", color:"#404040"}} variant="body2">{caseData?.case_type}</Typography>
         <Box>
-          <Typography sx={{fontWeight: 500}} variant="body2">{caseData?.engagement_status}</Typography>
+          <Typography sx={{fontWeight: 500, color: "#9C27B0"}} variant="body2">{caseData?.engagement_status}</Typography>
         </Box>
       </Stack>
     </div>

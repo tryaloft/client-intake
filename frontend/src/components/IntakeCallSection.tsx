@@ -2,32 +2,62 @@ import React, { useEffect, useRef, useState } from "react";
 import { Box, Link, Slider, Stack, Typography } from "@mui/material";
 import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
+import WavesurferPlayer from "@wavesurfer/react";
 
 import { useSelector } from "react-redux";
 import { selectCaseData } from "../state/selectors/client-selectors";
 import { formatCallDuration } from "../utils/time";
 import { PurpleIconButton } from "./base/Buttons";
 import ClientScreenTile from "./base/ClientScreenTile";
+import { AudioVisualizer } from "react-audio-visualize";
+import WaveSurfer from "wavesurfer.js";
 
 const IntakeCallSection: React.FC = () => {
   const [audioFileSeconds, setAudioFileSeconds] = useState<number>(30);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [blob, setBlob] = useState<Blob>();
+  const visualizerRef = useRef<HTMLCanvasElement>(null);
   const caseData = useSelector(selectCaseData);
+  const [wavesurfer, setWavesurfer] = useState<WaveSurfer | null>(null);
+
+  const onReady = (ws: WaveSurfer) => {
+    setWavesurfer(ws);
+    setIsPlaying(false);
+  };
+
+  const onPlayPause = () => {
+    wavesurfer && wavesurfer.playPause();
+  };
+
+  useEffect(() => {
+    // TODO get file from S3
+    const fetchBlob = async () => {
+      try {
+        const response = await fetch("/Pendretti.mp3");
+        const blobData = await response.blob();
+        setBlob(blobData);
+      } catch (error) {
+        console.error("Error fetching the MP3 blob:", error);
+      }
+    };
+    fetchBlob();
+  }, []);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
     setAudioFileSeconds(newValue as number);
-    console.log("new value", newValue   )
+    console.log("new value", newValue);
   };
 
-  const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
-    if (!isPlaying) {
-      audioRef.current?.play();
-    } else {
-      audioRef.current?.pause();
-    }
-  };
+  // const togglePlayPause = () => {
+  //   setIsPlaying(!isPlaying);
+  //   if (!isPlaying) {
+  //     audioRef.current?.play();
+  //     visualizerRef.current?.
+  //   } else {
+  //     audioRef.current?.pause();
+  //   }
+  // };
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -38,7 +68,7 @@ const IntakeCallSection: React.FC = () => {
         setAudioFileSeconds(currentTime);
       }
     };
-    console.log("current time", audio?.currentTime, audio?.duration)
+
     audio?.addEventListener("timeupdate", updatePosition);
 
     return () => {
@@ -61,7 +91,7 @@ const IntakeCallSection: React.FC = () => {
       minute: "numeric",
       hour12: true,
     };
-    console.log("intaker", intaker);
+
     const formattedDate = date.toLocaleDateString("en-US", options);
     return `Conducted by ${intaker} on ${formattedDate}`;
   }
@@ -87,7 +117,7 @@ const IntakeCallSection: React.FC = () => {
           >
             View Transcript
           </Link>
-{/* 
+          {/* 
           <Link
             component="button"
             variant="body1"
@@ -100,21 +130,28 @@ const IntakeCallSection: React.FC = () => {
         </Stack>
       </Stack>
       <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: "24px" }}>
-      <audio ref={audioRef} src="/Pendretti.mp3" />
-        <PurpleIconButton onClick={togglePlayPause} disableRipple>
+        <PurpleIconButton onClick={onPlayPause} disableRipple>
           {isPlaying ? (
             <PauseCircleFilledIcon fontSize="large" />
           ) : (
             <PlayCircleFilledWhiteIcon fontSize="large" />
           )}
         </PurpleIconButton>
-        <Slider
-          size="medium"
-          value={audioFileSeconds}
-          onChange={handleChange}
-          aria-labelledby="audio-slider"
-          sx={{ mx: 2, flex: 1, color: "#25004D" }}
+        <WavesurferPlayer
+          height={50}
+          width={700}
+          waveColor="#25004d"
+          progressColor={"#b9b4cf"}
+          cursorColor={"#25004d"}
+          url="/Pendretti.mp3"
+          barWidth={3}
+          barGap={3}
+          barRadius={10}
+          onReady={onReady}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
         />
+
         {caseData?.intake_call && (
           <Box
             sx={{
